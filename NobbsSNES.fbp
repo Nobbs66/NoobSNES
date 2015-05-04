@@ -1,0 +1,22 @@
+[Project]
+Version=3
+Description=SNES Emu
+Api=fb (FreeBASIC)
+[Make]
+Current=1
+1=Windows GUI,fbc -s gui
+Recompile=2
+Module=Module Build,fbc -c
+[TabOrder]
+TabOrder=1,3,2
+[File]
+1=NobbsSNES.bas
+2=NobbsSNES.rc
+3=NobbsSNES.bi
+[BreakPoint]
+1=
+3=
+[FileInfo]
+1=0,2,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+3=0,88,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2=0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
