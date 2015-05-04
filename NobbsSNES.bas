@@ -3,13 +3,9 @@
 #Include Once "NobbsSNES.rc"
 #Include Once "Decoder.bi"
 Type cpus
-	Dim As Integer PC  'Program counter
-	Dim As Integer X 	'X Compare Register
-	Dim As Integer Y	'Y Compare Register
-	Dim As Integer Mem 'Memory
-	Dim As Integer A	'Accumulator
-	Dim As Integer P	'Processor Status 
+Pc As Integer 'Program Counter
 End Type
+Dim shared cpu As cpus
 Sub CPUReset
 	
 End Sub

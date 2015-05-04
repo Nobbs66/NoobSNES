@@ -240,7 +240,7 @@ Sub INS_PLA
 	
 End Sub
 Sub INS_PLD
-	
+	cpu.Pc = 1
 End Sub
 Sub INS_PLP
 	
