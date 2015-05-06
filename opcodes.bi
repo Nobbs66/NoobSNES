@@ -223,22 +223,28 @@ Sub INS_PER
 	
 End Sub
 Sub INS_PHA
-	
+	If Bit(cpu.P,5) =  Then 
+	cpu.S(cpu.SP) = cpu.A
+	Else 
+	cpu.S(cpu.SP) = cpu.A And &00FF
 End Sub
-Sub INS_phd
-	
+Sub INS_PHD
+	cpu.S(cpu.SP) = cpu.DP
 End Sub
 Sub INS_PHK
 	
 End Sub
 Sub INS_PHX
-	
+	cpu.P(cpu.PS) = cpu.X
+	cpu.SP += 1
 End Sub
 Sub INS_PHY
-	
+	cpu.P(cpu.PS) = cpu.Y
+	cpu.PC += 1
 End Sub
 Sub INS_PLA
-	
+	cpu.SP -= 1
+	cpu.A = cpu.S(cpu.SP)
 End Sub
 Sub INS_PLD
 

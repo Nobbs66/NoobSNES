@@ -1,4 +1,3 @@
-
 Declare Sub NMI
 Declare Sub Main
 Declare Sub Power
@@ -8,10 +7,12 @@ Type cpus
 	X As Short 'X Compare
 	Y As Short 'Y compare
 	A As Short 'Accumulator 8/16-bits
-	Mem (0 To &h1FFFF) As Byte 'Memory
+	Mem (0 To &h1FFFF) As Byte 'Memory  NOTE: Add both loROM/HiROM lines
 	DP As Integer 'Direct Page Register
-	S (0 To 511) As Integer 'Stack
+	PB As Integer 'Program Bank Register
+	S (0 To 511) As Short'Stack
 	SP As Integer'Stack Pointer
+	Operand As Integer
 	P As Byte
 	'Processor Status
 '|--------------------|	
