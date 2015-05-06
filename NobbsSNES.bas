@@ -15,11 +15,12 @@ Type cpus
 	Operand As Integer
 	P As Byte
 	'Processor Status
-'|---------------------|	
-'|	 '''''''''''''''''' |             
-'|	 'C|Z|I|D|X|M|V|N|' |
-'|	 '''''''''''''''''' |
-'|---------------------|	
+'+--------------------+	
+'|	'''''''''''''''''' |             
+'|	'C|Z|I|D|X|M|V|N|' |
+'|	'''''''''''''''''' |
+'+--------------------+	
+
 End Type
 Type counts
 	cycles As Integer 'Opcodes cycles count 
