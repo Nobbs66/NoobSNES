@@ -13,6 +13,7 @@ Type cpus
 	S (0 To 511) As Short'Stack
 	SP As Integer'Stack Pointer
 	Operand As Integer
+	opcodes As String
 	P As Byte
 	'Processor Status
 '+--------------------+	
@@ -30,7 +31,7 @@ Type counts
 End Type
 Dim Shared count As counts
 Dim Shared cpu As cpus
-#Include Once "opcodes.bi"
+#Include Once "decoder.bi"
 Sub Power
 	
 End Sub
