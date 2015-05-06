@@ -96,25 +96,43 @@ Sub INS_ASL
 	
 End Sub
 Sub INS_BCC
-	
+	If Bit(cpu.P,0) = 0 Then 
+cpu.PC += cpu.operand
+Else cpu.PC += 1
+endif
 End Sub
 Sub INS_BCS
-	
+	If Bit(cpu.P,0) = 1 Then
+cpu.PC += cpu.Operand
+Else cpu.PC += 1
+	EndIf
 End Sub
 Sub INS_BEQ
-	
+	If Bit(cpu.P,1) = 1 Then
+cpu.pc += cpu.Operand
+	Else cpu.PC += 1
+	EndIf
 End Sub
 Sub INS_BIT
 	
 End Sub
 Sub INS_BMI
-	
+	If Bit(cpu.P,7) = 1 Then
+cpu.PC += cpu.Operand
+	Else cpu.PC += 1
+	EndIf
 End Sub
 Sub INS_BNE
-	
+	If Bit(cpu.P,1) = 1 Then
+cpu.PC += cpu.Operand
+	Else cpu.PC += 1
+	EndIf
 End Sub
 Sub INS_BPL
-	
+	If Bit(cpu.P,7) = 0 Then
+	cpu.PC += cpu.Operand
+Else cpu.PC += 1
+endif
 End Sub
 Sub INS_BRA
 	
@@ -126,10 +144,16 @@ Sub INS_BRL
 	
 End Sub
 Sub INS_BVC
-	
+	If Bit(cpu.P,6) = 0 Then
+		cpu.PC += cpu.Operand
+	Else cpu.PC += 1
+	EndIf
 End Sub
 Sub INS_BVS
-	
+	If Bit(cpu.P,6) = 1 Then
+		cpu.PC += cpu.Operand
+		Else cpu.PC += 1
+	EndIf
 End Sub
 Sub INS_CLC
 	cpu.P = Bitreset(cpu.P,0)
@@ -223,10 +247,11 @@ Sub INS_PER
 	
 End Sub
 Sub INS_PHA
-	If Bit(cpu.P,5) =  Then 
+	If Bit(cpu.P,5) = 0 Then 
 	cpu.S(cpu.SP) = cpu.A
 	Else 
-	cpu.S(cpu.SP) = cpu.A And &00FF
+	cpu.S(cpu.SP) = cpu.A And &h00FF
+	endif
 End Sub
 Sub INS_PHD
 	cpu.S(cpu.SP) = cpu.DP
@@ -235,11 +260,11 @@ Sub INS_PHK
 	
 End Sub
 Sub INS_PHX
-	cpu.P(cpu.PS) = cpu.X
+	cpu.S(cpu.SP) = cpu.X
 	cpu.SP += 1
 End Sub
 Sub INS_PHY
-	cpu.P(cpu.PS) = cpu.Y
+	cpu.S(cpu.SP) = cpu.Y
 	cpu.PC += 1
 End Sub
 Sub INS_PLA
@@ -304,7 +329,7 @@ Sub INS_STP
 	
 End Sub
 Sub INS_STZ
-	
+	cpu.mem(cpu.operand) = 0 
 End Sub
 Sub INS_TAX
 	
@@ -316,7 +341,7 @@ Sub INS_TCD
 	
 End Sub
 Sub INS_TCS
-	
+	cpu.S(cpu.SP) = cpu.A
 End Sub
 Sub INS_TDC
 	
