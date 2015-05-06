@@ -1,6 +1,7 @@
 '16 Addressing modes
 Dim amode As String
 Select Case(amode)
+	
 Case "I"  'Implied
 
 Case "IMF" 'Immediate Memory Flag

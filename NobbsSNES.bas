@@ -33,11 +33,31 @@ Dim Shared count As counts
 Dim Shared cpu As cpus
 #Include Once "decoder.bi"
 Sub Power
-	
-End Sub
-Sub Main
-	
+	'Clear Memory
+	For i  As Integer = 0 To &h1FFFF
+		cpu.Mem(i) = 0
+	Next
+	'Clear Stack
+	For i As Integer = 0 To 511
+		cpu.S(i) = 0 
+	Next
+'Clear Registers
+cpu.P = 0
+cpu.SP = 0 
+cpu.X = 0 
+cpu.Y = 0 
+cpu.DP = 0 
+cpu.PB = 0 
+cpu.A = 0 
+'Set PC to 6502 Reset Vector
+cpu.PC = (cpu.mem(&hFFFD)Shr 8) Or (cpu.mem(&hFFFC))
+count.cycles = 0 
+
 End Sub
 Sub NMI
 	
 End Sub
+Sub Main
+ 
+End Sub
+
