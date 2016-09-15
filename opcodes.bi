@@ -33,13 +33,13 @@ Declare Sub INS_JMP	'Jump to Location
 Declare Sub INS_JML 	'Jump Long
 Declare Sub INS_JSR	'Jump Subroutine
 Declare Sub INS_JSL	'Jump Sumroutine Long
-Declare Sub INS_LDA	'Load Accumulator
+Declare Sub INS_LDA	'Load Accumulator.
 Declare Sub INS_LDX	'Load X
 Declare Sub INS_LDY	'Load Y
 Declare Sub INS_LSR	'Shift Right
 Declare Sub INS_MVN	'Move Block Negative
 Declare Sub INS_MVP	'Move Block Positive
-Declare Sub INS_NOP	'No Operation 		      	DONE
+Declare Sub INS_NOP	'No Operation 		        	DONE
 Declare Sub INS_ORA	'Or Accumulator
 Declare Sub INS_PEA	'Push Effective Address
 Declare Sub INS_PEI	'Push Effective Indirect Address
